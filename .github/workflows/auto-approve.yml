@@ -1,0 +1,17 @@
+name: Auto Approve
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    if: contains(github.head_ref, 'chore/update-version')
+    steps:
+      - name: Auto approve
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
