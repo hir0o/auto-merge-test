@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+# 権限設定を追加
+permissions:
+  pull-requests: write
+
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
