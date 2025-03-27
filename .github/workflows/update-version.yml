@@ -22,7 +22,7 @@ jobs:
       # バージョン番号を更新（検証用に日付を追加するだけ）
       - name: Update version
         run: |
-          npm version patch
+          echo "version: $(date '+%Y%m%d-%H%M%S')" > version.yml
 
       # 更新を含むPRを作成
       - name: Create Pull Request
